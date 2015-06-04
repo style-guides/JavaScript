@@ -1,6 +1,6 @@
 {
   "name": "javascript-styleguide",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "JavaScript styleguide with a focus on readability",
   "main": "README.md",
   "repository": {
@@ -16,5 +16,6 @@
   "bugs": {
     "url": "https://github.com/style-guides/JavaScript/issues"
   },
-  "homepage": "https://github.com/style-guides/JavaScript#readme"
+  "homepage": "https://github.com/style-guides/JavaScript#readme",
+  "scripts": {}
 }
