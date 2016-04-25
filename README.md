@@ -66,6 +66,73 @@ except the next line starts with an `(`, `[` or <code>\`</code>
 
 ## Commas
 
+### Inline Commas
+
+An inline comma MUST be followed by one space character
+
+```js
+const colors = ['green', 'yellow', 'red']
+```
+
+instead of
+
+```js
+const colors = ['green','yellow','red']
+```
+
+
+### Trailing Commas
+
+Trailing commas MUST be used in Arrays
+
+```js
+const fruits = [
+  apple,
+  banana,
+  melon,
+]
+```
+
+instead of
+
+```js
+const fruits = [
+  apple,
+  banana,
+  melon
+]
+```
+
+… and Objects
+
+```js
+const person = {
+  firstName: 'John',
+  lastName: 'Smith',
+}
+```
+
+instead of
+
+
+```js
+const person = {
+  firstName: 'John',
+  lastName: 'Smith'
+}
+```
+
+Reasoning:
+
+To add an element to the end of an Array or Object,
+2 lines must be modified.
+This adds unnecessary visual clutter to diffs.
+Furthermore, elements can be more easily rearranged
+when they all have the same structure.
+
+
+## Leading Commas
+
 No leading commas MUST be used
 
 ```js
@@ -73,7 +140,7 @@ const fruits = [
   apple,
   banana,
   peach,
-  melon
+  melon,
 ]
 ```
 
@@ -93,7 +160,7 @@ and
 const person = {
   firstName: 'John',
   lastName: 'Smith',
-  age: 30
+  age: 30,
 }
 ```
 
@@ -104,44 +171,6 @@ const person = { firstName: 'John'
              , lastName: 'Smith'
              , age: 30
              }
-```
-
-
-Additional trailing comma SHOULD NOT be used
-as some implementations of ES3 would add length to an array
-if it had an additional trailing comma.
-(ES5, however, clarifies that a trailing comma
-does not add to the length of an array)
-
-
-```js
-const person = {
-  firstName: 'John',
-  lastName: 'Smith'
-}
-```
-
-instead of
-
-
-```js
-const person = {
-  firstName: 'John',
-  lastName: 'Smith',
-}
-```
-
-
-An inline comma MUST be followed by one space character
-
-```js
-const colors = ['green', 'yellow', 'red']
-```
-
-instead of
-
-```js
-const colors = ['green','yellow','red']
 ```
 
 
