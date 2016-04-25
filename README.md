@@ -69,7 +69,7 @@ except the next line starts with an `(`, `[` or <code>\`</code>
 No leading commas MUST be used
 
 ```js
-var fruits = [
+const fruits = [
   apple,
   banana,
   peach,
@@ -80,7 +80,7 @@ var fruits = [
 instead of
 
 ```js
-var fruits = [ apple
+const fruits = [ apple
              , banana
              , peach
              , melon
@@ -90,7 +90,7 @@ var fruits = [ apple
 and
 
 ```js
-var person = {
+const person = {
   firstName: 'John',
   lastName: 'Smith',
   age: 30
@@ -100,7 +100,7 @@ var person = {
 instead of
 
 ```js
-var person = { firstName: 'John'
+const person = { firstName: 'John'
              , lastName: 'Smith'
              , age: 30
              }
@@ -115,7 +115,7 @@ does not add to the length of an array)
 
 
 ```js
-var person = {
+const person = {
   firstName: 'John',
   lastName: 'Smith'
 }
@@ -125,7 +125,7 @@ instead of
 
 
 ```js
-var person = {
+const person = {
   firstName: 'John',
   lastName: 'Smith',
 }
@@ -135,13 +135,13 @@ var person = {
 An inline comma MUST be followed by one space character
 
 ```js
-var colors = ['green', 'yellow', 'red']
+const colors = ['green', 'yellow', 'red']
 ```
 
 instead of
 
 ```js
-var colors = ['green','yellow','red']
+const colors = ['green','yellow','red']
 ```
 
 
@@ -158,7 +158,7 @@ var colors = ['green','yellow','red']
 - MUST be declared and assigned at the top of their scope
 
 ```js
-var foo = 0,
+const foo = 0,
   bar,
   baz
 ```
@@ -334,19 +334,19 @@ You MUST, however, explain the reasons for not sticking to a rule in a comment.
 - jQuery object variables MUST be prefixed with a `$`
 
   ```js
-  var $form = $('#myForm')
+  const $form = $('#myForm')
   ```
 
   instead of
 
   ```js
-  var form = $('#myForm')
+  const form = $('#myForm')
   ```
 
 - Lookups MUST be cached
 
   ```js
-  var $form = $('#form')
+  const $form = $('#form')
 
   $form.css({
     'background-color': 'pink'
