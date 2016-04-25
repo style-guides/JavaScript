@@ -1,14 +1,17 @@
-# Javascript Styleguide
+# JavaScript Styleguide
 
-This is a **normative** guide on how to format Javascript.
+This is a **normative** guide on how to format JavaScript.
 The main aim is to get the best possible readability.
+It is especially optimized for ECMAScript 2015,
+but should work equally good with other versions.
 
-It's assumed that the code will be optimized by code minifiers (or the like)
-before using it in a production client-side environment.
+It's assumed that the code
+will be optimized by code minifiers and/or package tools
+for usage in a production client-side environment.
 
 Influences:
 
-- https://github.com/unboxed/Javascript-Style-Guide
+- https://github.com/unboxed/javascript-style-guide
 - https://github.com/airbnb/javascript
 - http://contribute.jquery.org/style-guide/js/
 - https://github.com/styleguide/javascript
@@ -174,22 +177,95 @@ const person = { firstName: 'John'
 ```
 
 
-## Variables
+## Variables / Constants
 
-- MUST be declared with the `var` keyword.
-- If a variable should be made available globally
-  explicitly declare it as a property of the window object
-  (e.g. `window.variableName`)
-- Each project MAY expose at most one global variable
-- One `var` declaration MUST be used for multiple variables
-  and each variable MUST be declared on a newline
-- Unsassigned variables MUST be declared last
-- MUST be declared and assigned at the top of their scope
+### Read Only
+
+Read only references to a value MUST be declared with `const`
 
 ```js
-const foo = 0,
-  bar,
-  baz
+const answerToEverything = 42
+```
+
+instead of
+
+```js
+let answerToEverything = 42
+```
+
+
+### Reassignable
+
+Reassignable variables must be declared with `let`
+
+```js
+let currentPage = 138
+
+function turnPageOver () {
+  currentPage += 1
+}
+```
+
+instead of
+
+```js
+const currentPage = 138
+
+function turnPageOver () {
+  currentPage += 1
+}
+```
+
+### `var` keyword
+
+Variables must never be declared with `var`
+
+
+### Declaration Group
+
+Each variable MUST be declared with exactly one `const` or `let` keyword
+
+```js
+const name = 'John'
+const age = 34
+const instrument = 'guitar'
+```
+
+instead of
+
+```js
+const name = 'John',
+      age = 34,
+      instrument = 'guitar'
+```
+
+
+### Global Variables
+
+If a variable shall be exposed globally
+it MUST be explicitly declared as a property
+of the global scope (`window`/`global` object)
+
+```js
+window.brandName = 'Stark Industries'
+// or
+global.brandName = 'Stark Industries'
+```
+
+instead of
+
+```js
+brandName = 'Stark Industries'
+```
+
+### Unassigned variables
+
+Unassigned `let` variables MUST be declared last in a group of declarations
+
+```js
+const foo = 7
+let bar = 4
+let baz
 ```
 
 
