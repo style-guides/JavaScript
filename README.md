@@ -1,8 +1,10 @@
 # Javascript Styleguide
 
-This is a **normative** guide on how to format Javascript. The main aim is to get the best possible readability.
+This is a **normative** guide on how to format Javascript.
+The main aim is to get the best possible readability.
 
-It's assumed that the code will be optimized by code minifiers (or the like) before using it in a production client-side environment.
+It's assumed that the code will be optimized by code minifiers (or the like)
+before using it in a production client-side environment.
 
 Influences:
 
@@ -15,7 +17,10 @@ Influences:
 - http://javascript.crockford.com/code.html
 
 
-The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in [RFC 2119](http://pretty-rfc.herokuapp.com/RFC2119).
+The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
+"SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document
+are to be interpreted as described in
+[RFC 2119](http://pretty-rfc.herokuapp.com/RFC2119).
 
 
 ## Naming Conventions
@@ -28,30 +33,40 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 
 ## Whitespace
 
-- Tabs MUST be used for indentation
-- It's RECOMMENDED to equal the indentation of a tab to 4 spaces
-- You MAY use, however, a different number while working on the code to match your style preferences. Other common numbers of spaces are 2 and 8.
+- 2 spaces MUST be used for indentation
 - There MUST be no trailing whitespace characters
 - An empty newline must be placed at the end of a file
-- Invisibles SHOULD be displayed during coding to reduce the likelihood of whitespace mistakes
+- Invisibles SHOULD be displayed during coding
+	to reduce the likelihood of whitespace mistakes
 - Tabs and spaces MUST NOT be mixed
+
+
+Reasoning:
+
+Originally this guide required the use of tabs for indentation.
+The problem, however, is that a tab character can have any length
+(normally 2 or 4 characters wide).
+This undermines the purpose of monospaced fonts, where every character
+is supposed to have the same length to ensures alignment and predictability
+of the text layout.
 
 
 ## Multi-line Statements
 
-- Lines SHOULD be no longer than 80 characters, and MUST NOT exceed 100 (counting tabs as 4 spaces)
-- When a statement is too long to fit on one line, line breaks MUST occur after an operator
+- Lines MUST not be longer than 80 characters
+- When a statement is too long to fit on a line,
+	line breaks MUST occur after an operator
 
 
 ## Semicolons
 
-Semicolons MUST NOT be used to terminate statements except the next line starts with an `(`
+Semicolons MUST NOT be used to terminate statements
+except the next line starts with an `(`, `[` or <code>``</code>
 
 
 ## Commas
 
 - No leading commas MUST be used
-	
 
 		var foo = 0,
 			bar,
@@ -64,15 +79,15 @@ Semicolons MUST NOT be used to terminate statements except the next line starts 
 			, baz
 
 	and
-	
+
 		var person = {
 			firstName: 'John',
 			lastName: 'Smith',
 			age: 30
 		}
-	
+
 	instead of
-	
+
 		var person = {
 			firstName: 'John'
 			, lastName: 'Smith'
@@ -81,7 +96,7 @@ Semicolons MUST NOT be used to terminate statements except the next line starts 
 
 - Additional trailing comma SHOULD NOT be used as some implementations of ES3 would add length to an array if it had an additional trailing comma.
 	(ES5, however, clarifies that a trailing comma does not add to the length of an array)
-	
+
 		var person = {
 			firstName: 'John',
 			lastName: 'Smith'
@@ -97,7 +112,7 @@ Semicolons MUST NOT be used to terminate statements except the next line starts 
 - An inline comma MUST be followed by one space character
 
 		var colors = ['green', 'yellow', 'red']
-	
+
 	instead of
 
 		var colors = ['green','yellow','red']
@@ -111,7 +126,7 @@ Semicolons MUST NOT be used to terminate statements except the next line starts 
 - One `var` declaration MUST be used for multiple variables and each variable MUST be declared on a newline
 - Unsassigned variables MUST be declared last
 - MUST be declared and assigned at the top of their scope
-  
+
 	var foo = 0,
 		bar,
 		baz
@@ -149,11 +164,11 @@ Shortcuts MAY be used where appropriate:
 		}
 
 - `else` MUST be placed on a newline after the `if`-block. If braces are omitted there MUST be a blank line between the `if` and `else` part.
-	
+
 
 		if (testValue)
 			doSomething()
-			
+
 		else
 			doSomethingElse()
 
@@ -228,17 +243,17 @@ Shortcuts MAY be used where appropriate:
 - There MUST NOT be seperate setter and getter functions
 
 		person.age(25)
-	
+
 	instead of
-	
+
 		person.setAge(25)
-	
+
 	and
-	
+
 		person.age()
-	
-	instead of 
-	
+
+	instead of
+
 		person.getAge()
 
 
@@ -263,21 +278,21 @@ You MAY (when it's absolutely necessary) differ from any rules of this guide to 
 - jQuery object variables MUST be prefixed with a `$`
 
 		var $form = $('#myForm')
-	
+
 	instead of
-	
+
 		var form = $('#myForm')
 
 - Lookups MUST be cached
 
 		var $form = $('#form')
-		
+
 		$form.css({
 			'background-color': 'pink'
 		})
-		
+
 		// …
-		
+
 		$form.hide()
 
 	instead of
@@ -285,7 +300,7 @@ You MAY (when it's absolutely necessary) differ from any rules of this guide to 
 		$('#form').css({
 			'background-color': 'pink'
 		})
-		
+
 		// …
-		
+
 		$('#form').hide()
