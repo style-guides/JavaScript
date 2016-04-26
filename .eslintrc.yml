@@ -21,3 +21,5 @@ rules:
   prefer-const:
     - error
     - destructuring: any
+  no-var:
+    - error
