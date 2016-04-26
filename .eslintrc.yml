@@ -23,3 +23,11 @@ rules:
     - destructuring: any
   no-var:
     - error
+  brace-style:
+    - error
+    - stroustrup
+  curly:
+    - error
+    - multi-line
+  keyword-spacing:
+    - error
