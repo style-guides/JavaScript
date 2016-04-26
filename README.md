@@ -271,75 +271,179 @@ let baz
 
 ## Relational Operators
 
-- `===` MUST be used over `==`
-- `!==` MUST be used over `!=`
+- `===` MUST be used instead of `==`
+- `!==` MUST be used instead of `!=` except in `value != null`
+  where it has the same effect as `value !== null && value !== undefined`
 
 
 Shortcuts MAY be used where appropriate:
 
-- `if (name) {…}` instead of `if (name !== '') {…}`
-- `if (collection.length) {…}` instead of  `if (collection.length > 0) {…}`
-- …
+```js
+if (name) {
+  …
+}
+```
+
+instead of
+
+```js
+if (name !== '') {
+  …
+}
+```
+
+and
+
+```js
+if (collection.length) {
+  …
+}
+```
+
+instead of
+
+```js
+if (collection.length > 0) {
+  …
+}
+```
 
 
 ## Blocks
 
-- Blocks MUST NOT be used except as required by the compound statements
-  (Blocks don't have scope. Only functions have scope.)
+Blocks MAY be used to create an encapsulated scope
+
+```js
+{
+  const age = 34
+}
+
+{
+  const age = 27
+}  
+```
 
 
 ## Conditionals
 
-- Blocks SHOULD be ommited where possible:
+### Spaces Around Condition
 
-  ```js
-  if (testValue)
-    doSomething()
-  ```
+Before and after the condition must be a single space character.
 
-  instead of
+```js
+if (testValue) {
+  doSomething()
+}
+```
 
-  ```js
-  if (testValue){
-    doSomething()
-  }
-  ```
+instead of
 
-- `else` MUST be placed on a newline after the `if`-block.
-  If braces are omitted there MUST be a blank line
-  between the `if` and `else` part.
+```js
+if(testValue){
+  doSomething()
+}
+```
 
-  ```js
-  if (testValue)
-    doSomething()
 
-  else
-    doSomethingElse()
-  ```
+### Blocks for Multiline Statements
+
+Blocks MAY be omitted in single line statements
+but must be used for multiline statements.
+
+```js
+if (testValue) doSomething()
+
+// or
+
+if (testValue) {
+  doSomething()
+}
+```
+
+```js
+if (testValue) {
+  doSomething()
+  doThisToo()
+}
+```
+---
+
+
+### Placement of `else`
+
+`else` MUST be placed on a newline after the `if`-block.
+
+```js
+if (testValue) {
+  doSomething()
+}
+else if (otherTestValue) {
+  doSomethingElse()
+}
+else {
+  doDefault()
+}
+```
+
+instead of
+
+```js
+if (testValue) {
+  doSomething()
+} else if (otherTestValue) {
+  doSomethingElse()
+} else {
+  doDefault()
+}
+```
+
+Reasoning:
+
+- Increases readability through space between `if` and `else` block
+- As `else` is at the beginning of the line it's easier to skim down
+  a list of `if`s and `else`s.
 
 
 ## Comments
 
 - API documentation MUST NOT be written in comments.
-  It lives in its own repository
+  It lives in its own directory/repository
 - Obscure code SHOULD be commented but not obvious things
+  So do not write comments like this:
+
+  ```js
+  // If person is older than 34
+  if (person.age > 34) {
+    …
+  }
+  ```
+
+
+### Single Line
+
+- `//` MUST be used for single line comments
+- There MUST be a space between `//` and the first character of the comment
+- Single line comments SHOULD be placed on a newline
+  above the subject of the comment
+- One empty line MUST be put before a single line comment which starts
+  at the beginning of a line.
+- `// FIXME:` MAY be used to annotate problems
+- `// TODO:` MAY be used to capture issues which need to get solved
 
 
 ### Multiline
 
 - `/* … */` MUST be used for multiline comments
 - Two empty line MUST be put before a multi line comment
+- The start and end tag MUST be on a separate line
 
+```js
+/*
+This is a
+multiline comment
+*/
 
-### Singleline
-
-- `//` MUST be used for single line comments
-- There MUST be a space between `//` and the first character of the comment
-- Single line comments MUST be placed on a newline
-  above the subject of the comment
-- One empty line MUST be put before a single line comment
-- `// FIXME: ` MAY be used to annotate problems
-- `// TODO:` MAY be used to capture issues which need to get solved
+```
 
 
 ## Strings
@@ -358,11 +462,20 @@ Shortcuts MAY be used where appropriate:
 
 ### Anonymous
 
-- MUST start with a `!`
+Anonymous functions MUST start with a `!`
 
-  ```js
-  !function(){…}
-  ```
+```js
+!function () {
+  …
+}
+```
+
+Reasoning:
+
+`(function () {})` can lead to errors
+when relying on ASI (Automatic Semicolon Insertion)
+or when concatenating several JavaScript files
+
 
 ## Properties
 
@@ -372,104 +485,135 @@ Shortcuts MAY be used where appropriate:
 
 ### Chaining
 
-- Indentation SHOULD be used for long method chains.
+Indentation SHOULD be used for long method chains.
+At the most one method should be called per line.
 
-  ```js
-  $('#items')
-    .find('.selected')
-    .highlight()
-  ```
+```js
+$('#items')
+  .find('.selected')
+  .highlight()
+```
 
-  instead of
+instead of
 
-  ```js
-  $('#items').find('.selected').highlight()
-  ```
+```js
+$('#items').find('.selected').highlight()
+```
 
-- Methods SHOULD return `this` to enable method chaining
+Methods SHOULD return `this` to enable method chaining.
 
 
-### Accessors
+### Setters
 
-- There MUST NOT be separate setter and getter functions
+Properties SHOULD be settable via setters and via a `set*` method
+to enable chaining.
 
-  ```js
-  person.age(25)
-  ```
+```js
+person.status = single
 
-  instead of
+person
+  .setName('John')
+  .marryTo('Linda')
+  .setStatus('married')
+```
 
-  ```js
-  person.setAge(25)
-  ```
+This enables easy traversing of structures involving several classes:
 
-  and
+```js
+database
+  .load('John')
+  .setAge('34')
+  .sister
+  .husband
+  .setName('Tom')
+```
 
-  ```js
-  person.age()
-  ```
 
-  instead of
+### Getters
 
-  ```js
-  person.getAge()
-  ```
+Retrieving of properties MUST at least
+be implemented via a getter.
+
+```js
+console.log(person.age)
+```
+
+instead of
+
+```js
+console.log(person.age())
+```
 
 
 ## Type Casting
 
-- to string: `String(123)`
-- to number: `Number("123")`
-- to boolean: `Boolean(1)`
+- To string: `String(123)`
+- To number: `Number('123')`
+- To boolean: `Boolean(1)`
+- To array:
+
+  ```js
+  Array.from('test')
+  // => ['t', 'e', 's', 't']
+  ```
+
+  ```js
+  function doSomething () {
+    Array.from(arguments)
+  }
+  doSomething(1, 2, 3)
+  // => [1, 2, 3]
+  ```
+
 // TODO: to date, …
 
 
 ## General
 
 You MAY (when it's absolutely necessary) differ from any rules of this guide
-to increase the performance.
+to increase performance.
 You MUST, however, explain the reasons for not sticking to a rule in a comment.
 
 
 ## Framework specific
 
-
 ### jQuery
 
-- jQuery object variables MUST be prefixed with a `$`
+Object variables MUST be prefixed with a `$`
 
-  ```js
-  const $form = $('#myForm')
-  ```
+```js
+const $form = $('#myForm')
+```
 
-  instead of
+instead of
 
-  ```js
-  const form = $('#myForm')
-  ```
+```js
+const form = $('#myForm')
+```
 
-- Lookups MUST be cached
 
-  ```js
-  const $form = $('#form')
+Lookups MUST be cached
 
-  $form.css({
-    'background-color': 'pink'
-  })
+```js
+const $form = $('#form')
 
-  // …
+$form.css({
+  'background-color': 'pink'
+})
 
-  $form.hide()
-  ```
+// …
 
-  instead of
+$form.hide()
+```
 
-  ```js
-  $('#form').css({
-    'background-color': 'pink'
-  })
+instead of
 
-  // …
+```js
+$('#form').css({
+  'background-color': 'pink'
+})
 
-  $('#form').hide()
-  ```
+// …
+
+$('#form').hide()
+```
