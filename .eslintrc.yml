@@ -31,3 +31,14 @@ rules:
     - multi-line
   keyword-spacing:
     - error
+  one-var:
+    - error
+    - never
+  prefer-arrow-callback:
+    - error
+  newline-per-chained-call:
+    - error
+    - ignoreChainWithDepth: 1
+  space-before-function-paren:
+    - error
+    - always
