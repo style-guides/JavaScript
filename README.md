@@ -9,22 +9,49 @@ It's assumed that the code
 will be optimized by code minifiers and/or package tools
 for usage in a production client-side environment.
 
-Influences:
-
-- https://github.com/unboxed/javascript-style-guide
-- https://github.com/airbnb/javascript
-- http://contribute.jquery.org/style-guide/js/
-- https://github.com/styleguide/javascript
-- https://github.com/rwaldron/idiomatic.js
-- https://github.com/Seravo/js-winning-style
-- http://javascript.crockford.com/code.html
-
-
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
 "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document
 are to be interpreted as described in
 [RFC 2119](http://pretty-rfc.herokuapp.com/RFC2119).
 
+
+## Installation
+
+The easiest way to adhere to this guide is
+to use the included eslint configuration file to check your files.
+In order to set it up fist install eslint and the styleguide:
+
+```shell
+npm install --save-dev eslint javascript-styleguide
+```
+
+Next add following entry to your package file:
+
+```json
+"eslintConfig": {
+  "root": true,
+  "extends": "./node_modules/javascript-styleguide/.eslintrc.yaml"
+}
+```
+
+This will load the configuration of this styleguide.
+Finally add a `lint` script to the package scripts:
+
+```json
+"scripts": {
+  "lint": "eslint .",
+  …
+}
+```
+
+Now you can check your files for conformity simply by running
+
+```shell
+npm run lint
+```
+
+
+## Guide
 
 ## Naming Conventions
 
@@ -617,3 +644,14 @@ $('#form').css({
 
 $('#form').hide()
 ```
+
+
+## Related
+
+- https://github.com/unboxed/javascript-style-guide
+- https://github.com/airbnb/javascript
+- http://contribute.jquery.org/style-guide/js/
+- https://github.com/styleguide/javascript
+- https://github.com/rwaldron/idiomatic.js
+- https://github.com/Seravo/js-winning-style
+- http://javascript.crockford.com/code.html
