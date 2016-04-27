@@ -15,6 +15,50 @@ are to be interpreted as described in
 [RFC 2119](http://pretty-rfc.herokuapp.com/RFC2119).
 
 
+## Table of Contents
+
+* [Installation](#installation)
+* [Guide](#guide)
+  + [Naming Conventions](#naming-conventions)
+  + [Whitespace](#whitespace)
+  + [Multi-line Statements](#multi-line-statements)
+  + [Semicolons](#semicolons)
+  + [Commas](#commas)
+    - [Inline Commas](#inline-commas)
+    - [Trailing Commas](#trailing-commas)
+  + [Leading Commas](#leading-commas)
+  + [Variables / Constants](#variables---constants)
+    - [Read Only](#read-only)
+    - [Reassignable](#reassignable)
+    - [`var` keyword](#-var--keyword)
+    - [Declaration Group](#declaration-group)
+    - [Global Variables](#global-variables)
+    - [Unassigned variables](#unassigned-variables)
+  + [Relational Operators](#relational-operators)
+  + [Blocks](#blocks)
+  + [Conditionals](#conditionals)
+    - [Spaces Around Condition](#spaces-around-condition)
+    - [Blocks for Multiline Statements](#blocks-for-multiline-statements)
+    - [Placement of `else`](#placement-of--else-)
+  + [Comments](#comments)
+    - [Single Line](#single-line)
+    - [Multiline](#multiline)
+  + [Strings](#strings)
+  + [Objects](#objects)
+  + [Arrays](#arrays)
+  + [Functions](#functions)
+    - [Anonymous](#anonymous)
+  + [Properties](#properties)
+  + [Methods](#methods)
+    - [Chaining](#chaining)
+    - [Setters](#setters)
+    - [Getters](#getters)
+  + [Type Casting](#type-casting)
+  + [General](#general)
+  + [Framework specific](#framework-specific)
+    - [jQuery](#jquery)
+* [Related](#related)
+
 ## Installation
 
 The easiest way to adhere to this guide is
@@ -53,7 +97,7 @@ npm run lint
 
 ## Guide
 
-## Naming Conventions
+### Naming Conventions
 
 - Names SHOULD be descriptive
 - camelCase MUST be used for naming objects, functions, and instances
@@ -61,7 +105,7 @@ npm run lint
 - `_this` MUST be used as a reference to `this`
 
 
-## Whitespace
+### Whitespace
 
 - 2 spaces MUST be used for indentation
 - There MUST be no trailing whitespace characters
@@ -81,22 +125,22 @@ is supposed to have the same length to ensures alignment and predictability
 of the text layout.
 
 
-## Multi-line Statements
+### Multi-line Statements
 
 - Lines MUST not be longer than 80 characters
 - When a statement is too long to fit on a line,
   line breaks MUST occur after an operator
 
 
-## Semicolons
+### Semicolons
 
 Semicolons MUST NOT be used to terminate statements
 except the next line starts with an `(`, `[` or <code>\`</code>
 
 
-## Commas
+### Commas
 
-### Inline Commas
+#### Inline Commas
 
 An inline comma MUST be followed by one space character
 
@@ -111,7 +155,7 @@ const colors = ['green','yellow','red']
 ```
 
 
-### Trailing Commas
+#### Trailing Commas
 
 Trailing commas MUST be used in Arrays
 
@@ -161,7 +205,7 @@ Furthermore, elements can be more easily rearranged
 when they all have the same structure.
 
 
-## Leading Commas
+### Leading Commas
 
 No leading commas MUST be used
 
@@ -204,9 +248,9 @@ const person = { firstName: 'John'
 ```
 
 
-## Variables / Constants
+### Variables / Constants
 
-### Read Only
+#### Read Only
 
 Read only references to a value MUST be declared with `const`
 
@@ -221,7 +265,7 @@ let answerToEverything = 42
 ```
 
 
-### Reassignable
+#### Reassignable
 
 Reassignable variables must be declared with `let`
 
@@ -243,12 +287,12 @@ function turnPageOver () {
 }
 ```
 
-### `var` keyword
+#### `var` keyword
 
 Variables must never be declared with `var`
 
 
-### Declaration Group
+#### Declaration Group
 
 Each variable MUST be declared with exactly one `const` or `let` keyword
 
@@ -267,7 +311,7 @@ const name = 'John',
 ```
 
 
-### Global Variables
+#### Global Variables
 
 If a variable shall be exposed globally
 it MUST be explicitly declared as a property
@@ -285,7 +329,7 @@ instead of
 brandName = 'Stark Industries'
 ```
 
-### Unassigned variables
+#### Unassigned variables
 
 Unassigned `let` variables MUST be declared last in a group of declarations
 
@@ -296,7 +340,7 @@ let baz
 ```
 
 
-## Relational Operators
+### Relational Operators
 
 - `===` MUST be used instead of `==`
 - `!==` MUST be used instead of `!=` except in `value != null`
@@ -336,7 +380,7 @@ if (collection.length > 0) {
 ```
 
 
-## Blocks
+### Blocks
 
 Blocks MAY be used to create an encapsulated scope
 
@@ -347,13 +391,13 @@ Blocks MAY be used to create an encapsulated scope
 
 {
   const age = 27
-}  
+}
 ```
 
 
-## Conditionals
+### Conditionals
 
-### Spaces Around Condition
+#### Spaces Around Condition
 
 Before and after the condition must be a single space character.
 
@@ -372,7 +416,7 @@ if(testValue){
 ```
 
 
-### Blocks for Multiline Statements
+#### Blocks for Multiline Statements
 
 Blocks MAY be omitted in single line statements
 but must be used for multiline statements.
@@ -396,7 +440,7 @@ if (testValue) {
 ---
 
 
-### Placement of `else`
+#### Placement of `else`
 
 `else` MUST be placed on a newline after the `if`-block.
 
@@ -431,7 +475,7 @@ Reasoning:
   a list of `if`s and `else`s.
 
 
-## Comments
+### Comments
 
 - API documentation MUST NOT be written in comments.
   It lives in its own directory/repository
@@ -446,7 +490,7 @@ Reasoning:
   ```
 
 
-### Single Line
+#### Single Line
 
 - `//` MUST be used for single line comments
 - There MUST be a space between `//` and the first character of the comment
@@ -458,7 +502,7 @@ Reasoning:
 - `// TODO:` MAY be used to capture issues which need to get solved
 
 
-### Multiline
+#### Multiline
 
 - `/* … */` MUST be used for multiline comments
 - Two empty line MUST be put before a multi line comment
@@ -473,21 +517,21 @@ multiline comment
 ```
 
 
-## Strings
+### Strings
 
 - Single Quotes MUST be used for strings
 
 
-## Objects
+### Objects
 
 
-## Arrays
+### Arrays
 
 
-## Functions
+### Functions
 
 
-### Anonymous
+#### Anonymous
 
 Anonymous functions MUST start with a `!`
 
@@ -504,13 +548,13 @@ when relying on ASI (Automatic Semicolon Insertion)
 or when concatenating several JavaScript files
 
 
-## Properties
+### Properties
 
 
-## Methods
+### Methods
 
 
-### Chaining
+#### Chaining
 
 Indentation SHOULD be used for long method chains.
 At the most one method should be called per line.
@@ -530,7 +574,7 @@ $('#items').find('.selected').highlight()
 Methods SHOULD return `this` to enable method chaining.
 
 
-### Setters
+#### Setters
 
 Properties SHOULD be settable via setters and via a `set*` method
 to enable chaining.
@@ -556,7 +600,7 @@ database
 ```
 
 
-### Getters
+#### Getters
 
 Retrieving of properties MUST at least
 be implemented via a getter.
@@ -572,7 +616,7 @@ console.log(person.age())
 ```
 
 
-## Type Casting
+### Type Casting
 
 - To string: `String(123)`
 - To number: `Number('123')`
@@ -595,16 +639,16 @@ console.log(person.age())
 // TODO: to date, …
 
 
-## General
+### General
 
 You MAY (when it's absolutely necessary) differ from any rules of this guide
 to increase performance.
 You MUST, however, explain the reasons for not sticking to a rule in a comment.
 
 
-## Framework specific
+### Framework specific
 
-### jQuery
+#### jQuery
 
 Object variables MUST be prefixed with a `$`
 
