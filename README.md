@@ -1,3 +1,5 @@
+![Banner](./banner.png)
+
 # JavaScript Styleguide
 
 This is a **normative** guide on how to format JavaScript.
