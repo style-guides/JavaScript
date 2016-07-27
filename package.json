@@ -3,6 +3,9 @@
   "version": "0.2.2",
   "description": "JavaScript styleguide with a focus on readability",
   "main": "README.md",
+  "scripts": {
+    "test": "eslint tests/correct.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/style-guides/JavaScript.git"
@@ -17,5 +20,7 @@
     "url": "https://github.com/style-guides/JavaScript/issues"
   },
   "homepage": "https://github.com/style-guides/JavaScript#readme",
-  "scripts": {}
+  "devDependencies": {
+    "eslint": "^3.1.1"
+  }
 }
