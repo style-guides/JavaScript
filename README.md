@@ -34,7 +34,8 @@ are to be interpreted as described in
     - [Declaration Group](#declaration-group)
     - [Global Variables](#global-variables)
     - [Unassigned variables](#unassigned-variables)
-  + [Relational Operators](#relational-operators)
+  + [Operators](#operators)
+    - [Relational Operators](#relational-operators)
   + [Blocks](#blocks)
   + [Conditionals](#conditionals)
     - [Spaces Around Condition](#spaces-around-condition)
@@ -58,6 +59,7 @@ are to be interpreted as described in
   + [Framework specific](#framework-specific)
     - [jQuery](#jquery)
 * [Related](#related)
+
 
 ## Installation
 
@@ -340,7 +342,30 @@ let baz
 ```
 
 
-### Relational Operators
+### Operators
+
+### Position
+
+Line breaks must occur after operators:
+
+```js
+const sentence = 'This is a ' +
+  'short sentence.'
+```
+
+Except for the ternary operator:
+
+```js
+const status = isTesting
+  ? 'We are currently testing'
+  : 'Everything operational'
+```
+
+Placing the `?` and the `:` at the beginning of the line
+makes it easier to skim the code.
+
+
+#### Relational Operators
 
 - `===` MUST be used instead of `==`
 - `!==` MUST be used instead of `!=` except in `value != null`

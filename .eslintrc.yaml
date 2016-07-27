@@ -131,6 +131,9 @@ rules:
   operator-linebreak:
     - error
     - after
+    - overrides:
+        ?: before
+        ":": before
   prefer-arrow-callback:
     - error
   prefer-const:
