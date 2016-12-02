@@ -12,4 +12,8 @@ status = isTest
 status = 'This is a' +
   'test'
 
+console.info('Explicit logging is allowed')
+console.warn('Warning too')
+console.error('Writing to stderr even more')
+
 log.info(status)

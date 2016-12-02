@@ -79,6 +79,12 @@ rules:
   no-cond-assign:
     - error
     - except-parens
+  no-console:
+    - error
+    - allow:
+      - info
+      - warn
+      - error
   no-debugger:
     - error
   no-empty:
