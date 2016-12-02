@@ -4,9 +4,7 @@
   "description": "Shareable ESLint config for the JavaScript Styleguide",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint .",
-    "test": "npm run lint && node test.js",
-    "prepublish": "npm test"
+    "prepublish": "cd .. && npm test"
   },
   "repository": {
     "type": "git",
@@ -28,11 +26,5 @@
   },
   "peerDependencies": {
     "eslint": ">= 3"
-  },
-  "devDependencies": {
-    "eslint": "^3.11.1"
-  },
-  "eslintConfig": {
-    "extends": "./index.js"
   }
 }

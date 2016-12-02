@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/style-guides/JavaScript#readme",
   "devDependencies": {
-    "eslint": "^3.1.1"
+    "eslint": "^3.11.1"
   },
   "eslintConfig": {
     "extends": "./eslint-config-javascript/index.js"
