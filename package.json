@@ -4,7 +4,7 @@
   "description": "JavaScript styleguide with a focus on readability",
   "main": "README.md",
   "scripts": {
-    "test": "eslint tests/correct.js"
+    "test": "eslint tests/correct.js && node tests/eslint-config"
   },
   "repository": {
     "type": "git",
@@ -22,5 +22,8 @@
   "homepage": "https://github.com/style-guides/JavaScript#readme",
   "devDependencies": {
     "eslint": "^3.1.1"
+  },
+  "eslintConfig": {
+    "extends": "./eslint-config-javascript/index.js"
   }
 }

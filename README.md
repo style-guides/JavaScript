@@ -66,19 +66,18 @@ are to be interpreted as described in
 ## Installation
 
 The easiest way to adhere to this guide is
-to use the included eslint configuration file to check your files.
-In order to set it up fist install eslint and the styleguide:
+to use the included [eslint-config-javascript] module to check your files.
+In order to set it up, fist install ESLint and the module:
 
 ```shell
-npm install --save-dev eslint javascript-styleguide
+npm install --save-dev eslint eslint-config-javascript
 ```
 
 Next add following entry to your package file:
 
 ```json
 "eslintConfig": {
-  "root": true,
-  "extends": "./node_modules/javascript-styleguide/.eslintrc.yaml"
+  "extends": "eslint-config-javascript"
 }
 ```
 
@@ -97,6 +96,8 @@ Now you can check your files for conformity simply by running
 ```shell
 npm run lint
 ```
+
+[eslint-config-javascript]: https://npmjs.com/packages/eslint-config-javascript
 
 
 ## Guide

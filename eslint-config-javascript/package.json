@@ -1,0 +1,38 @@
+{
+  "name": "eslint-config-javascript",
+  "version": "1.0.0",
+  "description": "Shareable ESLint config for the JavaScript Styleguide",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "test": "npm run lint && node test.js",
+    "prepublish": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/style-guides/eslint-config-javascript.git"
+  },
+  "keywords": [
+    "eslint",
+    "eslintconfig",
+    "eslint-config"
+  ],
+  "author": "Adrian Sieber",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/style-guides/eslint-config-javascript/issues"
+  },
+  "homepage": "https://github.com/style-guides/eslint-config-javascript#readme",
+  "dependencies": {
+    "js-yaml": "^3.7.0"
+  },
+  "peerDependencies": {
+    "eslint": ">= 3"
+  },
+  "devDependencies": {
+    "eslint": "^3.11.1"
+  },
+  "eslintConfig": {
+    "extends": "./index.js"
+  }
+}
