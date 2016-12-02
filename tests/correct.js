@@ -1,19 +1,35 @@
-const nativeConsole = require('console')
-const log = new nativeConsole.Console(process.stdout, process.stderr)
-let status = ''
-
-// Incorrect placement of ternary operator
 const isTest = true
-status = isTest
-  ? 'is a test'
-  : 'is not a test'
 
-// Incorrect placement of operators
-status = 'This is a' +
+function doSomething (argument) {
+  return (argument || 1) * Math.rand()
+}
+const doNothing = () => {
+  const two = 1 + 1
+  Number(two)
+}
+
+doSomething(
+  isTest
+    ? 'is a test'
+    : 'is not a test'
+)
+
+doSomething(
+  'This is a' +
   'test'
+)
 
 console.info('Explicit logging is allowed')
 console.warn('Warning too')
 console.error('Writing to stderr even more')
 
-log.info(status)
+switch (isTest) {
+  case true:
+    doSomething()
+    break
+  case false:
+    doNothing()
+    break
+  default:
+    doSomething()
+}

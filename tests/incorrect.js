@@ -1,15 +1,28 @@
-const nativeConsole = require('console')
-const log = new nativeConsole.Console(process.stdout, process.stderr)
-let status = ''
+// Const is assigned but never used
+const unusedVariable = 'whatever'
 
 // Incorrect placement of ternary operator
-const isTest = true
-status = isTest ?
+const sentence = isTest ?
   'is a test' :
   'is not a test'
 
-// Incorrect placement of operators
-status = 'This is a'
+// Incorrect placement of plus operator
+const anotherSentence = 'This is a'
   + 'test'
 
-log.info(status)
+// Forbidden reassignment of const
+const isAllowed = true
+isAllowed = false
+
+// Forbidden debug logging
+console.log('Debug logging must be deleted')
+
+switch (isAllowed) {
+case true:
+  1 + 1
+case false:
+  2 + 2
+break
+default:
+  3 + 3
+}
