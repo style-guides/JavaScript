@@ -1,6 +1,5 @@
 {
   "name": "javascript-styleguide",
-  "version": "1.0.0",
   "description": "JavaScript styleguide with a focus on readability",
   "main": "README.md",
   "scripts": {
