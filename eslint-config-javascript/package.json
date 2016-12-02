@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/style-guides/eslint-config-javascript.git"
+    "url": "github:style-guides/javascript"
   },
   "keywords": [
     "eslint",
@@ -18,9 +18,9 @@
   "author": "Adrian Sieber",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/style-guides/eslint-config-javascript/issues"
+    "url": "https://github.com/style-guides/javascript/issues"
   },
-  "homepage": "https://github.com/style-guides/eslint-config-javascript#readme",
+  "homepage": "https://github.com/style-guides/javascript#readme",
   "dependencies": {
     "js-yaml": "^3.7.0"
   },
