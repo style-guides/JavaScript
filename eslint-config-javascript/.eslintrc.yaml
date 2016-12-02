@@ -159,8 +159,6 @@ rules:
   spaced-comment:
     - error
     - always
-  strict:
-    - error
   valid-typeof:
     - error
   wrap-iife:
