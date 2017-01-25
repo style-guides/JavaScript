@@ -9,168 +9,168 @@ parserOptions:
   sourceType: module
 rules:
   array-callback-return:
-    - error
+    - warn
   arrow-spacing:
-    - error
+    - warn
   block-scoped-var:
-    - error
+    - warn
   camelcase:
-    - error
+    - warn
   brace-style:
-    - error
+    - warn
     - stroustrup
   comma-dangle:
-    - error
+    - warn
     - always-multiline
   comma-spacing:
-    - error
+    - warn
   comma-style:
-    - error
+    - warn
     - last
   constructor-super:
-    - error
+    - warn
   curly:
-    - error
+    - warn
     - multi-line
     - consistent
   default-case:
-    - error
+    - warn
   dot-notation:
-    - error
+    - warn
   dot-location:
-    - error
+    - warn
     - property
   eqeqeq:
-    - error
+    - warn
     - allow-null
   guard-for-in:
-    - error
+    - warn
   id-blacklist:
-    - error
+    - warn
     - cb
     - callback
     - err
     - req
     - res
   id-length:
-    - error
+    - warn
   indent:
-    - error
+    - warn
     - 2
     - SwitchCase: 1
   key-spacing:
-    - error
+    - warn
   keyword-spacing:
-    - error
+    - warn
   linebreak-style:
-    - error
+    - warn
     - unix
   max-len:
-    - error
+    - warn
     - code: 80
       tabWidth: 4
   new-cap:
-    - error
+    - warn
   newline-per-chained-call:
-    - error
+    - warn
     - ignoreChainWithDepth: 1
   no-bitwise:
-    - error
+    - warn
   no-caller:
-    - error
+    - warn
   no-cond-assign:
-    - error
+    - warn
     - except-parens
   no-console:
-    - error
+    - warn
     - allow:
       - info
       - warn
       - error
   no-debugger:
-    - error
+    - warn
   no-empty:
-    - error
+    - warn
   no-eval:
-    - error
+    - warn
   no-extend-native:
-    - error
+    - warn
   no-extra-parens:
-    - error
+    - warn
     - all
     - nestedBinaryExpressions: false
   no-irregular-whitespace:
-    - error
+    - warn
   no-iterator:
-    - error
+    - warn
   no-implicit-coercion:
-    - error
+    - warn
   no-loop-func:
-    - error
+    - warn
   no-multi-str:
-    - error
+    - warn
   no-new:
-    - error
+    - warn
   no-proto:
-    - error
+    - warn
   no-script-url:
-    - error
+    - warn
   no-sequences:
-    - error
+    - warn
   no-shadow:
-    - error
+    - warn
   no-spaced-func:
-    - error
+    - warn
   no-undef:
-    - error
+    - warn
   no-unused-vars:
-    - error
+    - warn
   no-var:
-    - error
+    - warn
   no-whitespace-before-property:
-    - error
+    - warn
   no-with:
-    - error
+    - warn
   one-var:
-    - error
+    - warn
     - never
   operator-assignment:
-    - error
+    - warn
     - always
   operator-linebreak:
-    - error
+    - warn
     - after
     - overrides:
         ?: before
         ":": before
   prefer-arrow-callback:
-    - error
+    - warn
   prefer-const:
-    - error
+    - warn
     - destructuring: any
   quotes:
-    - error
+    - warn
     - single
   semi:
-    - error
+    - warn
     - never
   semi-spacing:
-    - error
+    - warn
   space-before-blocks:
-    - error
+    - warn
     - always
   space-before-function-paren:
-    - error
+    - warn
     - always
   space-infix-ops:
-    - error
+    - warn
   spaced-comment:
-    - error
+    - warn
     - always
   valid-typeof:
-    - error
+    - warn
   wrap-iife:
-    - error
+    - warn
     - inside
   yoda:
-    - error
+    - warn
