@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-javascript",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Shareable ESLint config for the JavaScript Styleguide",
   "main": "index.js",
   "scripts": {
