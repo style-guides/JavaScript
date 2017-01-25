@@ -4,7 +4,8 @@
   "description": "Shareable ESLint config for the JavaScript Styleguide",
   "main": "index.js",
   "scripts": {
-    "prepublish": "cd .. && npm test"
+    "test": "eslint tests/correct.js && node tests/eslint-config",
+    "prepublish": "npm test"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,9 @@
   "homepage": "https://github.com/style-guides/javascript#readme",
   "dependencies": {
     "js-yaml": "^3.7.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.14.0"
   },
   "peerDependencies": {
     "eslint": ">= 3"

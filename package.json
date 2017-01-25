@@ -3,11 +3,11 @@
   "description": "JavaScript styleguide with a focus on readability",
   "main": "README.md",
   "scripts": {
-    "test": "eslint tests/correct.js && node tests/eslint-config"
+    "precommit": "cd eslint-config-javascript && npm test"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/style-guides/JavaScript.git"
+    "url": "github:style-guides/JavaScript"
   },
   "keywords": [
     "javascript",
@@ -16,13 +16,10 @@
   "author": "Adrian Sieber",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/style-guides/JavaScript/issues"
+    "url": "github:style-guides/JavaScript/issues"
   },
-  "homepage": "https://github.com/style-guides/JavaScript#readme",
+  "homepage": "github:style-guides/JavaScript#readme",
   "devDependencies": {
-    "eslint": "^3.11.1"
-  },
-  "eslintConfig": {
-    "extends": "./eslint-config-javascript/index.js"
+    "husky": "^0.13.1"
   }
 }

@@ -1,6 +1,6 @@
 const assert = require('assert')
 
-const eslintConfig = require('../eslint-config-javascript')
+const eslintConfig = require('..')
 
 assert(eslintConfig.hasOwnProperty('env'))
 assert(eslintConfig.hasOwnProperty('extends'))
