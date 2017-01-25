@@ -9,168 +9,168 @@ parserOptions:
   sourceType: module
 rules:
   array-callback-return:
-    - error
+    - warning
   arrow-spacing:
-    - error
+    - warning
   block-scoped-var:
-    - error
+    - warning
   camelcase:
-    - error
+    - warning
   brace-style:
-    - error
+    - warning
     - stroustrup
   comma-dangle:
-    - error
+    - warning
     - always-multiline
   comma-spacing:
-    - error
+    - warning
   comma-style:
-    - error
+    - warning
     - last
   constructor-super:
-    - error
+    - warning
   curly:
-    - error
+    - warning
     - multi-line
     - consistent
   default-case:
-    - error
+    - warning
   dot-notation:
-    - error
+    - warning
   dot-location:
-    - error
+    - warning
     - property
   eqeqeq:
-    - error
+    - warning
     - allow-null
   guard-for-in:
-    - error
+    - warning
   id-blacklist:
-    - error
+    - warning
     - cb
     - callback
     - err
     - req
     - res
   id-length:
-    - error
+    - warning
   indent:
-    - error
+    - warning
     - 2
     - SwitchCase: 1
   key-spacing:
-    - error
+    - warning
   keyword-spacing:
-    - error
+    - warning
   linebreak-style:
-    - error
+    - warning
     - unix
   max-len:
-    - error
+    - warning
     - code: 80
       tabWidth: 4
   new-cap:
-    - error
+    - warning
   newline-per-chained-call:
-    - error
+    - warning
     - ignoreChainWithDepth: 1
   no-bitwise:
-    - error
+    - warning
   no-caller:
-    - error
+    - warning
   no-cond-assign:
-    - error
+    - warning
     - except-parens
   no-console:
-    - error
+    - warning
     - allow:
       - info
       - warn
       - error
   no-debugger:
-    - error
+    - warning
   no-empty:
-    - error
+    - warning
   no-eval:
-    - error
+    - warning
   no-extend-native:
-    - error
+    - warning
   no-extra-parens:
-    - error
+    - warning
     - all
     - nestedBinaryExpressions: false
   no-irregular-whitespace:
-    - error
+    - warning
   no-iterator:
-    - error
+    - warning
   no-implicit-coercion:
-    - error
+    - warning
   no-loop-func:
-    - error
+    - warning
   no-multi-str:
-    - error
+    - warning
   no-new:
-    - error
+    - warning
   no-proto:
-    - error
+    - warning
   no-script-url:
-    - error
+    - warning
   no-sequences:
-    - error
+    - warning
   no-shadow:
-    - error
+    - warning
   no-spaced-func:
-    - error
+    - warning
   no-undef:
-    - error
+    - warning
   no-unused-vars:
-    - error
+    - warning
   no-var:
-    - error
+    - warning
   no-whitespace-before-property:
-    - error
+    - warning
   no-with:
-    - error
+    - warning
   one-var:
-    - error
+    - warning
     - never
   operator-assignment:
-    - error
+    - warning
     - always
   operator-linebreak:
-    - error
+    - warning
     - after
     - overrides:
         ?: before
         ":": before
   prefer-arrow-callback:
-    - error
+    - warning
   prefer-const:
-    - error
+    - warning
     - destructuring: any
   quotes:
-    - error
+    - warning
     - single
   semi:
-    - error
+    - warning
     - never
   semi-spacing:
-    - error
+    - warning
   space-before-blocks:
-    - error
+    - warning
     - always
   space-before-function-paren:
-    - error
+    - warning
     - always
   space-infix-ops:
-    - error
+    - warning
   spaced-comment:
-    - error
+    - warning
     - always
   valid-typeof:
-    - error
+    - warning
   wrap-iife:
-    - error
+    - warning
     - inside
   yoda:
-    - error
+    - warning
