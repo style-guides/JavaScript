@@ -1,9 +1,12 @@
 {
-  "name": "javascript-styleguide",
-  "description": "JavaScript styleguide with a focus on readability",
-  "main": "README.md",
+  "name": "eslint-config-javascript",
+  "version": "1.2.0",
+  "description": "Shareable ESLint config for the JavaScript Styleguide",
+  "main": "index.js",
   "scripts": {
-    "precommit": "cd eslint-config-javascript && npm test"
+    "test": "eslint tests/correct.js && node tests/main && node tests/eslint-config",
+    "prepublish": "npm test",
+    "precommit": "npm test"
   },
   "repository": {
     "type": "git",
@@ -11,15 +14,25 @@
   },
   "keywords": [
     "javascript",
-    "styleguide"
+    "styleguide",
+    "eslint",
+    "eslintconfig",
+    "eslint-config"
   ],
   "author": "Adrian Sieber",
-  "license": "MIT",
+  "license": "ISC",
   "bugs": {
-    "url": "github:style-guides/JavaScript/issues"
+    "url": "https://github.com/style-guides/JavaScript/issues"
   },
-  "homepage": "github:style-guides/JavaScript#readme",
+  "homepage": "https://github.com/style-guides/JavaScript#readme",
+  "dependencies": {
+    "js-yaml": "^3.8.1"
+  },
   "devDependencies": {
+    "eslint": "^3.16.1",
     "husky": "^0.13.1"
+  },
+  "peerDependencies": {
+    "eslint": ">= 3"
   }
 }

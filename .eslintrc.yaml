@@ -148,6 +148,9 @@ rules:
   prefer-const:
     - warn
     - destructuring: any
+  quote-props:
+    - warn
+    - as-needed
   quotes:
     - warn
     - single
