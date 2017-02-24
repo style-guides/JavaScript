@@ -86,7 +86,7 @@ Finally add a `lint` script to the package scripts:
 
 ```json
 "scripts": {
-  "lint": "eslint .",
+  "lint": "eslint --max-warnings 0 .",
   …
 }
 ```
