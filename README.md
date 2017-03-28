@@ -19,49 +19,57 @@ are to be interpreted as described in
 
 ## Table of Contents
 
-* [Installation](#installation)
-* [Guide](#guide)
-  + [Naming Conventions](#naming-conventions)
-  + [Whitespace](#whitespace)
-  + [Multi-line Statements](#multi-line-statements)
-  + [Semicolons](#semicolons)
-  + [Commas](#commas)
-    - [Inline Commas](#inline-commas)
-    - [Trailing Commas](#trailing-commas)
-  + [Leading Commas](#leading-commas)
-  + [Variables / Constants](#variables---constants)
-    - [Read Only](#read-only)
-    - [Reassignable](#reassignable)
-    - [`var` keyword](#-var--keyword)
-    - [Declaration Group](#declaration-group)
-    - [Global Variables](#global-variables)
-    - [Unassigned variables](#unassigned-variables)
-  + [Operators](#operators)
-    - [Relational Operators](#relational-operators)
-  + [Blocks](#blocks)
-  + [Conditionals](#conditionals)
-    - [Spaces Around Condition](#spaces-around-condition)
-    - [Blocks for Multiline Statements](#blocks-for-multiline-statements)
-    - [Placement of `else`](#placement-of--else-)
-  + [Comments](#comments)
-    - [Single Line](#single-line)
-    - [Multiline](#multiline)
-  + [Strings](#strings)
-  + [Objects](#objects)
-  + [Arrays](#arrays)
-  + [Functions](#functions)
-    - [Anonymous](#anonymous)
-  + [Properties](#properties)
-  + [Methods](#methods)
-    - [Chaining](#chaining)
-    - [Setters](#setters)
-    - [Getters](#getters)
-  + [Type Casting](#type-casting)
-  + [General](#general)
-  + [Framework specific](#framework-specific)
-    - [jQuery](#jquery)
-* [Related](#related)
+<!-- Run `markdown-toc -i README.md` to create following TOC -->
 
+<!-- toc -->
+
+- [Installation](#installation)
+- [Guide](#guide)
+  * [Naming Conventions](#naming-conventions)
+  * [Whitespace](#whitespace)
+  * [Multi-line Statements](#multi-line-statements)
+  * [Semicolons](#semicolons)
+  * [Commas](#commas)
+    + [Inline Commas](#inline-commas)
+    + [Trailing Commas](#trailing-commas)
+  * [Leading Commas](#leading-commas)
+  * [Variables / Constants](#variables--constants)
+    + [Read Only](#read-only)
+    + [Reassignable](#reassignable)
+    + [`var` keyword](#var-keyword)
+    + [Declaration Group](#declaration-group)
+    + [Global Variables](#global-variables)
+    + [Unassigned variables](#unassigned-variables)
+  * [Operators](#operators)
+  * [Position](#position)
+    + [Relational Operators](#relational-operators)
+  * [Blocks](#blocks)
+  * [Conditionals](#conditionals)
+    + [Spaces Around Condition](#spaces-around-condition)
+    + [Blocks for Multiline Statements](#blocks-for-multiline-statements)
+    + [Placement of `else`](#placement-of-else)
+  * [Comments](#comments)
+    + [Single Line](#single-line)
+    + [Multiline](#multiline)
+  * [Strings](#strings)
+  * [Objects](#objects)
+  * [Arrays](#arrays)
+  * [Functions](#functions)
+    + [Anonymous](#anonymous)
+  * [Properties](#properties)
+  * [Methods](#methods)
+    + [Chaining](#chaining)
+    + [Setters](#setters)
+    + [Getters](#getters)
+  * [Type Casting](#type-casting)
+  * [General](#general)
+  * [Framework specific](#framework-specific)
+    + [jQuery](#jquery)
+- [Best Practices](#best-practices)
+  * [Functions](#functions-1)
+- [Related](#related)
+
+<!-- tocstop -->
 
 ## Installation
 
@@ -716,6 +724,38 @@ $('#form').css({
 
 $('#form').hide()
 ```
+
+
+## Best Practices
+
+### Functions
+
+**Every** non-primitive function should look like this:
+
+```js
+function doSomething (options = {}) {
+    const {
+        hasThis = true, // Some clear description why this is here
+        isThat = false,  // More clear descriptions
+        importantNumber = 1234, // The clearest description in the universe
+        content = 'Some thoughtful text', // Crystal clear
+    } = options
+
+    // Optional type checks
+    if (typeof importantNumber !== 'number') {
+        throw new TypeError(
+            `importantNumber must be a number and not "${importantNumber}"`
+        )
+    }
+}
+```
+
+This ensures:
+  - Arguments have appropriate default values
+  - Other developers can easily see which arguments are expected
+  - No incorrect values can be passed
+  - Function is extendable without a need to change the function signature
+
 
 
 ## Related
