@@ -751,11 +751,11 @@ function doSomething (options = {}) {
 ```
 
 This ensures:
-  - Arguments have appropriate default values
-  - Other developers can easily see which arguments are expected
-  - No incorrect values can be passed
-  - Function is extendable without a need to change the function signature
 
+- Arguments have appropriate default values
+- Other developers can easily see which arguments are expected
+- No incorrect values can be passed
+- Function is extendable without a need to change the function signature
 
 
 ## Related
