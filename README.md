@@ -66,6 +66,7 @@ are to be interpreted as described in
   * [Framework specific](#framework-specific)
     + [jQuery](#jquery)
 - [Best Practices](#best-practices)
+  * [Imports](#imports)
   * [Functions](#functions-1)
 - [Related](#related)
 
@@ -727,6 +728,47 @@ $('#form').hide()
 
 
 ## Best Practices
+
+### Imports
+
+Imports and requires should be sorted by type.
+
+1. Native
+2. External
+3. Internal
+
+To improve readability keep an empty newline between each section
+and 2 empty newlines below all imports / requires.
+
+For example ES2015 style imports:
+
+```js
+import path from 'path'
+import fs from 'fs'
+
+import lodash from 'lodash'
+
+import app from './source/app'
+
+
+const port = 1234
+```
+
+
+The same applies to CommonJS requires:
+
+```js
+const path = require('path')
+const fs = require('fs')
+
+const lodash = require('lodash')
+
+const app = require('./source/app')
+
+
+const port = 1234
+```
+
 
 ### Functions
 
