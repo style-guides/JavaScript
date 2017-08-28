@@ -1,6 +1,6 @@
 ![Banner](./banner.png)
 
-# JavaScript Styleguide
+# A typo for testing: autor
 
 This is a **normative** guide on how to format JavaScript.
 The main aim is to get the best possible readability.
