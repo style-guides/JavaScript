@@ -33,3 +33,16 @@ switch (isTest) {
   default:
     doSomething()
 }
+
+function useSpread (object) {
+  return {
+    ...object,
+    info: 'spread operator used',
+  }
+}
+
+useSpread({
+  spread: 'operator',
+  used: 'successfully',
+})
+
