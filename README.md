@@ -95,7 +95,7 @@ Finally add a `lint` script to the package scripts:
 
 ```json
 "scripts": {
-  "lint": "eslint --max-warnings 0 .",
+  "lint": "eslint --max-warnings=0 --ignore-path=.gitignore .",
   …
 }
 ```
