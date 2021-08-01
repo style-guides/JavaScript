@@ -5,10 +5,11 @@ env:
 root: true
 extends: 'eslint:recommended'
 parserOptions:
-  ecmaVersion: 2017
+  ecmaVersion: 2018
   sourceType: module
   ecmaFeatures:
-    experimentalObjectRestSpread: true
+    jsx: true
+    impliedStrict: true
 rules:
   array-callback-return:
     - warn
@@ -45,6 +46,9 @@ rules:
   eqeqeq:
     - warn
     - allow-null
+  eol-last:
+    - warn
+    - always
   guard-for-in:
     - warn
   id-blacklist:
@@ -89,6 +93,7 @@ rules:
       - info
       - warn
       - error
+      - debug
   no-debugger:
     - warn
   no-empty:
@@ -127,6 +132,8 @@ rules:
     - warn
   no-unused-vars:
     - warn
+  no-useless-escape:
+    - warn
   no-var:
     - warn
   no-whitespace-before-property:
@@ -155,7 +162,7 @@ rules:
     - as-needed
   quotes:
     - warn
-    - single
+    - double
   semi:
     - warn
     - never

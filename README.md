@@ -159,13 +159,13 @@ except the next line starts with an `(`, `[` or <code>\`</code>
 An inline comma MUST be followed by one space character
 
 ```js
-const colors = ['green', 'yellow', 'red']
+const colors = ["green", "yellow", "red"]
 ```
 
 instead of
 
 ```js
-const colors = ['green','yellow','red']
+const colors = ["green","yellow","red"]
 ```
 
 
@@ -195,8 +195,8 @@ const fruits = [
 
 ```js
 const person = {
-  firstName: 'John',
-  lastName: 'Smith',
+  firstName: "John",
+  lastName: "Smith",
 }
 ```
 
@@ -205,8 +205,8 @@ instead of
 
 ```js
 const person = {
-  firstName: 'John',
-  lastName: 'Smith'
+  firstName: "John",
+  lastName: "Smith"
 }
 ```
 
@@ -246,8 +246,8 @@ and
 
 ```js
 const person = {
-  firstName: 'John',
-  lastName: 'Smith',
+  firstName: "John",
+  lastName: "Smith",
   age: 30,
 }
 ```
@@ -255,8 +255,8 @@ const person = {
 instead of
 
 ```js
-const person = { firstName: 'John'
-             , lastName: 'Smith'
+const person = { firstName: "John"
+             , lastName: "Smith"
              , age: 30
              }
 ```
@@ -311,17 +311,17 @@ Variables must never be declared with `var`
 Each variable MUST be declared with exactly one `const` or `let` keyword
 
 ```js
-const name = 'John'
+const name = "John"
 const age = 34
-const instrument = 'guitar'
+const instrument = "guitar"
 ```
 
 instead of
 
 ```js
-const name = 'John',
+const name = "John",
       age = 34,
-      instrument = 'guitar'
+      instrument = "guitar"
 ```
 
 
@@ -332,15 +332,15 @@ it MUST be explicitly declared as a property
 of the global scope (`window`/`global` object)
 
 ```js
-window.brandName = 'Stark Industries'
+window.brandName = "Stark Industries"
 // or
-global.brandName = 'Stark Industries'
+global.brandName = "Stark Industries"
 ```
 
 instead of
 
 ```js
-brandName = 'Stark Industries'
+brandName = "Stark Industries"
 ```
 
 #### Unassigned variables
@@ -361,16 +361,16 @@ let baz
 Line breaks must occur after operators:
 
 ```js
-const sentence = 'This is a ' +
-  'short sentence.'
+const sentence = "This is a " +
+  "short sentence."
 ```
 
 Except for the ternary operator:
 
 ```js
 const status = isTesting
-  ? 'We are currently testing'
-  : 'Everything operational'
+  ? "We are currently testing"
+  : "Everything operational"
 ```
 
 Placing the `?` and the `:` at the beginning of the line
@@ -395,7 +395,7 @@ if (name) {
 instead of
 
 ```js
-if (name !== '') {
+if (name !== "") {
   …
 }
 ```
@@ -556,7 +556,10 @@ multiline comment
 
 ### Strings
 
-- Single Quotes MUST be used for strings
+Double quotes MUST be used for strings.
+
+Since most languages use double quotes for strings,
+this reduces the friction in multi-language projects.
 
 
 ### Objects
@@ -597,15 +600,15 @@ Indentation SHOULD be used for long method chains.
 At the most one method should be called per line.
 
 ```js
-$('#items')
-  .find('.selected')
+$("#items")
+  .find(".selected")
   .highlight()
 ```
 
 instead of
 
 ```js
-$('#items').find('.selected').highlight()
+$("#items").find(".selected").highlight()
 ```
 
 Methods SHOULD return `this` to enable method chaining.
@@ -620,20 +623,20 @@ to enable chaining.
 person.status = single
 
 person
-  .setName('John')
-  .marryTo('Linda')
-  .setStatus('married')
+  .setName("John")
+  .marryTo("Linda")
+  .setStatus("married")
 ```
 
 This enables easy traversing of structures involving several classes:
 
 ```js
 database
-  .load('John')
-  .setAge('34')
+  .load("John")
+  .setAge("34")
   .sister
   .husband
-  .setName('Tom')
+  .setName("Tom")
 ```
 
 
@@ -656,13 +659,13 @@ console.log(person.age())
 ### Type Casting
 
 - To string: `String(123)`
-- To number: `Number('123')`
+- To number: `Number("123")`
 - To boolean: `Boolean(1)`
 - To array:
 
   ```js
-  Array.from('test')
-  // => ['t', 'e', 's', 't']
+  Array.from("test")
+  // => ["t", "e", "s", "t"]
   ```
 
   ```js
@@ -690,23 +693,23 @@ You MUST, however, explain the reasons for not sticking to a rule in a comment.
 Object variables MUST be prefixed with a `$`
 
 ```js
-const $form = $('#myForm')
+const $form = $("#myForm")
 ```
 
 instead of
 
 ```js
-const form = $('#myForm')
+const form = $("#myForm")
 ```
 
 
 Lookups MUST be cached
 
 ```js
-const $form = $('#form')
+const $form = $("#form")
 
 $form.css({
-  'background-color': 'pink'
+  "background-color": "pink"
 })
 
 // …
@@ -717,13 +720,13 @@ $form.hide()
 instead of
 
 ```js
-$('#form').css({
-  'background-color': 'pink'
+$("#form").css({
+  "background-color": "pink"
 })
 
 // …
 
-$('#form').hide()
+$("#form").hide()
 ```
 
 
@@ -743,12 +746,12 @@ and 2 empty newlines below all imports / requires.
 For example ES2015 style imports:
 
 ```js
-import path from 'path'
-import fs from 'fs'
+import path from "path"
+import fs from "fs"
 
-import lodash from 'lodash'
+import lodash from "lodash"
 
-import app from './source/app'
+import app from "./source/app"
 
 
 const port = 1234
@@ -758,12 +761,12 @@ const port = 1234
 The same applies to CommonJS requires:
 
 ```js
-const path = require('path')
-const fs = require('fs')
+const path = require("path")
+const fs = require("fs")
 
-const lodash = require('lodash')
+const lodash = require("lodash")
 
-const app = require('./source/app')
+const app = require("./source/app")
 
 
 const port = 1234
@@ -780,11 +783,11 @@ function doSomething (options = {}) {
         hasThis = true, // Some clear description why this is here
         isThat = false,  // More clear descriptions
         importantNumber = 1234, // The clearest description in the universe
-        content = 'Some thoughtful text', // Crystal clear
+        content = "Some thoughtful text", // Crystal clear
     } = options
 
     // Optional type checks
-    if (typeof importantNumber !== 'number') {
+    if (typeof importantNumber !== "number") {
         throw new TypeError(
             `importantNumber must be a number and not "${importantNumber}"`
         )

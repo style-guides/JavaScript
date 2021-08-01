@@ -1,37 +1,41 @@
 // Setup code
-let test = ''
+let test = ""
 const isTest = true
 
 
 // Tabs instead of spaces
 function tabs () {
-	return 'foo'
+	return "foo"
 }
 
 
-// Tabs instead of spaces
+// 4 spaces instead of 2
 function spaces4 () {
-    return 'foo'
+    return "foo"
 }
 
 
 // Forbidden semicolon
-test = 'foo';
+test = "foo";
+
+
+// Useless escape
+test = "fo\o"
 
 
 // Const is assigned but never used
-const unusedVariable = 'whatever'
+const unusedVariable = "whatever"
 
 
 // Incorrect placement of ternary operator
 test = isTest ?
-  'is a test' :
-  'is not a test'
+  "is a test" :
+  "is not a test"
 
 
 // Incorrect placement of plus operator
-test = 'This is a'
-  + 'test'
+test = "This is a"
+  + "test"
 
 
 // Forbidden reassignment of const
@@ -40,7 +44,7 @@ isAllowed = false
 
 
 // Forbidden debug logging
-console.log('Debug logging must be deleted')
+console.log("Debug logging must be deleted")
 
 
 // Missing break statement
@@ -52,7 +56,7 @@ switch (isAllowed) {
 
 // Forbidden quoted keys
 test = {
-  'key': 'value',
+  "key": "value",
 }
 
 

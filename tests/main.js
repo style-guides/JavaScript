@@ -1,18 +1,26 @@
-const path = require('path')
-const assert = require('assert')
+const path = require("path")
+const assert = require("assert")
 
-const eslint = require('eslint')
+const eslintPackage = require("eslint")
 
-const cli = new eslint.CLIEngine()
-const filePath = path.join(__dirname, 'incorrect.js')
-const report = cli.executeOnFiles([filePath])
+async function main () {
+  const eslint = new eslintPackage.ESLint()
+  const filePath = path.join(__dirname, "incorrect.js")
 
+  try {
+    const reports = await eslint.lintFiles([filePath])
 
-process.stdout.write('Number of errors')
-assert.equal(report.errorCount, 1)
-console.info(' ✔︎')
+    process.stdout.write("Number of errors")
+    assert.equal(reports[0].errorCount, 1)
+    console.info(" ✔︎")
 
+    process.stdout.write("Number of warnings")
+    assert.equal(reports[0].warningCount, 10)
+    console.info(" ✔︎")
+  }
+  catch (error) {
+    console.error(error)
+  }
+}
 
-process.stdout.write('Number of warnings')
-assert.equal(report.warningCount, 9)
-console.info(' ✔︎')
+main()

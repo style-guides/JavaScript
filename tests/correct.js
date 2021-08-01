@@ -1,7 +1,7 @@
 const isTest = true
 
 function doSomething (argument) {
-  return (argument || 1) * Math.rand()
+  return (argument || 1) * Math.random()
 }
 const doNothing = () => {
   const two = 1 + 1
@@ -10,18 +10,19 @@ const doNothing = () => {
 
 doSomething(
   isTest
-    ? 'is a test'
-    : 'is not a test'
+    ? "is a test"
+    : "is not a test",
 )
 
 doSomething(
-  'This is a' +
-  'test'
+  "This is a" +
+  "test",
 )
 
-console.info('Explicit logging is allowed')
-console.warn('Warning too')
-console.error('Writing to stderr even more')
+console.info("Explicit logging is allowed")
+console.warn("Warning too")
+console.error("Writing to stderr even more")
+console.debug("And last but not least, debugging")
 
 switch (isTest) {
   case true:
@@ -34,15 +35,14 @@ switch (isTest) {
     doSomething()
 }
 
-function useSpread (object) {
+function useSpread (spreadObj) {
   return {
-    ...object,
-    info: 'spread operator used',
+    ...spreadObj,
+    info: "spread operator used",
   }
 }
 
 useSpread({
-  spread: 'operator',
-  used: 'successfully',
+  spread: "operator",
+  used: "successfully",
 })
-
