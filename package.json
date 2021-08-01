@@ -8,8 +8,7 @@
     "unit-tests": "node tests/main && node tests/eslint-config",
     "test": "npm run lint && npm run unit-tests && npm run add-toc",
     "add-toc": " markdown-toc -i README.md",
-    "prepublish": "npm test",
-    "precommit": "npm test"
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
