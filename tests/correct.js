@@ -3,7 +3,8 @@ const isTest = true
 function doSomething (argument) {
   return (argument || 1) * Math.random()
 }
-const doNothing = () => {
+
+function doNothing () {
   const two = 1 + 1
   Number(two)
 }

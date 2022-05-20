@@ -49,6 +49,9 @@ rules:
   eol-last:
     - warn
     - always
+  func-style:
+    - warn
+    - declaration
   guard-for-in:
     - warn
   id-blacklist:

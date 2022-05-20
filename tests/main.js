@@ -15,7 +15,7 @@ async function main () {
     console.info(" ✔︎")
 
     process.stdout.write("Number of warnings")
-    assert.equal(reports[0].warningCount, 10)
+    assert.equal(reports[0].warningCount, 11)
     console.info(" ✔︎")
   }
   catch (error) {

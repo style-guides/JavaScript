@@ -60,6 +60,12 @@ test = {
 }
 
 
+// Incorrect function style
+const doSomething = () => {
+  console.info("Something")
+}
+
+
 // Teardown code
 function noop (value) {
   return value
@@ -67,3 +73,4 @@ function noop (value) {
 noop(test)
 tabs()
 spaces4()
+doSomething()
