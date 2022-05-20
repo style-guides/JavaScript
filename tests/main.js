@@ -11,11 +11,31 @@ async function main () {
     const reports = await eslint.lintFiles([filePath])
 
     process.stdout.write("Number of errors")
-    assert.equal(reports[0].errorCount, 1)
+    assert.equal(reports[0].errorCount, 2)
     console.info(" ✔︎")
 
-    process.stdout.write("Number of warnings")
-    assert.equal(reports[0].warningCount, 11)
+    process.stdout.write("List of warnings")
+    const warningRules = [
+      "indent",
+      "indent",
+      "semi",
+      "no-useless-escape",
+      "no-unused-vars",
+      "@typescript-eslint/no-unused-vars",
+      "operator-linebreak",
+      "operator-linebreak",
+      "operator-linebreak",
+      "no-const-assign",
+      "no-console",
+      "no-fallthrough",
+      "quote-props",
+      "func-style",
+    ]
+    assert.deepStrictEqual(
+      warningRules,
+      reports[0].messages
+        .map(warning => warning.ruleId),
+    )
     console.info(" ✔︎")
   }
   catch (error) {

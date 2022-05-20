@@ -4,7 +4,7 @@
   "description": "Shareable ESLint config for the JavaScript Styleguide",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint tests/correct.js",
+    "lint": "eslint tests/correct.js tests/correct.ts",
     "unit-tests": "node tests/main && node tests/eslint-config",
     "test": "npm run lint && npm run unit-tests && npm run add-toc",
     "add-toc": " markdown-toc -i README.md",
@@ -28,6 +28,8 @@
   },
   "homepage": "https://github.com/style-guides/JavaScript#readme",
   "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.25.0",
+    "@typescript-eslint/parser": "^5.25.0",
     "js-yaml": "^4.1.0",
     "markdown-toc": "^1.2.0"
   },

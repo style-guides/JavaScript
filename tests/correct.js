@@ -28,12 +28,10 @@ console.debug("And last but not least, debugging")
 console.info('Strings including "double quotes" can use single quotes')
 
 switch (isTest) {
-  case true:
-    doSomething()
-    break
   case false:
     doNothing()
     break
+  case true:
   default:
     doSomething()
 }

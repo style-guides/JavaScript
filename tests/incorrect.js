@@ -2,6 +2,11 @@
 let test = ""
 const isTest = true
 
+// For using variables
+function noop (value) {
+  return value
+}
+
 
 // Tabs instead of spaces
 function tabs () {
@@ -37,10 +42,13 @@ test = isTest ?
 test = "This is a"
   + "test"
 
+noop(test)
+
 
 // Forbidden reassignment of const
 const isAllowed = true
 isAllowed = false
+noop(isAllowed)
 
 
 // Forbidden debug logging
@@ -48,9 +56,12 @@ console.log("Debug logging must be deleted")
 
 
 // Missing break statement
-switch (isAllowed) {
+switch (global.someFlag) {
   case true:
+    console.info("Missing break")
+
   default:
+    console.info("Default")
 }
 
 
@@ -67,10 +78,6 @@ const doSomething = () => {
 
 
 // Teardown code
-function noop (value) {
-  return value
-}
-noop(test)
 tabs()
 spaces4()
 doSomething()
