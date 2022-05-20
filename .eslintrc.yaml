@@ -166,6 +166,7 @@ rules:
   quotes:
     - warn
     - double
+    - avoidEscape: true
   semi:
     - warn
     - never

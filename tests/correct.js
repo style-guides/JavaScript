@@ -25,6 +25,8 @@ console.warn("Warning too")
 console.error("Writing to stderr even more")
 console.debug("And last but not least, debugging")
 
+console.info('Strings including "double quotes" can use single quotes')
+
 switch (isTest) {
   case true:
     doSomething()
