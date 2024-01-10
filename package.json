@@ -4,7 +4,7 @@
   "description": "Shareable ESLint config for the JavaScript Styleguide",
   "main": "index.js",
   "files": [
-    "index.js"
+    ".eslintrc.yaml"
   ],
   "scripts": {
     "lint": "eslint tests/correct.js tests/correct.ts",
