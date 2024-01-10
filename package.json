@@ -28,14 +28,14 @@
   },
   "homepage": "https://github.com/style-guides/JavaScript#readme",
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.25.0",
-    "@typescript-eslint/parser": "^5.25.0",
+    "@typescript-eslint/eslint-plugin": "^6.18.1",
+    "@typescript-eslint/parser": "^6.18.1",
     "js-yaml": "^4.1.0",
     "markdown-toc": "^1.2.0"
   },
   "devDependencies": {
-    "eslint": "^8.15.0",
-    "husky": "^8.0.1"
+    "eslint": "^8.56.0",
+    "husky": "^8.0.3"
   },
   "peerDependencies": {
     "eslint": ">=7"

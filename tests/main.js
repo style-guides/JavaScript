@@ -11,7 +11,7 @@ async function main () {
     const reports = await eslint.lintFiles([filePath])
 
     process.stdout.write("Number of errors")
-    assert.equal(reports[0].errorCount, 2)
+    assert.equal(reports[0].errorCount, 3)
     console.info(" ✔︎")
 
     process.stdout.write("List of warnings")
