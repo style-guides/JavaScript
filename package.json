@@ -3,6 +3,9 @@
   "version": "2.1.1",
   "description": "Shareable ESLint config for the JavaScript Styleguide",
   "main": "index.js",
+  "files": [
+    "index.js"
+  ],
   "scripts": {
     "lint": "eslint tests/correct.js tests/correct.ts",
     "unit-tests": "node tests/main && node tests/eslint-config",
@@ -12,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "github:style-guides/JavaScript"
+    "url": "git+https://github.com/style-guides/JavaScript.git"
   },
   "keywords": [
     "javascript",
