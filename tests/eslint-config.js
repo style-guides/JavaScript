@@ -1,14 +1,9 @@
-const assert = require("assert")
+import assert from "assert"
 
-const eslintConfig = require("..")
-
+import eslintConfig from "../index.js"
 
 process.stdout.write("Structure of eslint config")
 
-assert(eslintConfig.hasOwnProperty("env"))
-assert(eslintConfig.hasOwnProperty("extends"))
-assert(eslintConfig.hasOwnProperty("parserOptions"))
-assert(eslintConfig.hasOwnProperty("rules"))
-assert(Object.keys(eslintConfig.rules).length > 60)
+assert(Array.isArray(eslintConfig))
 
 console.info(" ✔︎")

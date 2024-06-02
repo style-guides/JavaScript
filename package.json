@@ -3,6 +3,7 @@
   "version": "2.1.3",
   "description": "Shareable ESLint config for the JavaScript Styleguide",
   "main": "index.js",
+  "type": "module",
   "files": [
     ".eslintrc.yaml"
   ],
@@ -11,7 +12,7 @@
     "unit-tests": "node tests/main && node tests/eslint-config",
     "test": "npm run lint && npm run unit-tests && npm run add-toc",
     "add-toc": " markdown-toc -i README.md",
-    "prepare": "husky install"
+    "prepare": "husky"
   },
   "repository": {
     "type": "git",
@@ -31,16 +32,18 @@
   },
   "homepage": "https://github.com/style-guides/JavaScript#readme",
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^6.18.1",
-    "@typescript-eslint/parser": "^6.18.1",
+    "@typescript-eslint/eslint-plugin": "^7.11.0",
+    "@typescript-eslint/parser": "^7.11.0",
+    "globals": "^15.3.0",
     "js-yaml": "^4.1.0",
-    "markdown-toc": "^1.2.0"
+    "markdown-toc": "^1.2.0",
+    "typescript-eslint": "^7.11.0"
   },
   "devDependencies": {
-    "eslint": "^8.56.0",
-    "husky": "^8.0.3"
+    "eslint": "^9.4.0",
+    "husky": "^9.0.11"
   },
   "peerDependencies": {
-    "eslint": ">=7"
+    "eslint": ">=9.0.0"
   }
 }

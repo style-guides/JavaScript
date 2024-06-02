@@ -1,9 +1,11 @@
-const path = require("path")
-const assert = require("assert")
+import path from "path"
+import assert from "assert"
 
-const eslintPackage = require("eslint")
+import eslintPackage from "eslint"
 
-async function main () {
+const __dirname = path.dirname(new URL(import.meta.url).pathname)
+
+async function main() {
   const eslint = new eslintPackage.ESLint()
   const filePath = path.join(__dirname, "incorrect.js")
 
@@ -33,12 +35,10 @@ async function main () {
     ]
     assert.deepStrictEqual(
       warningRules,
-      reports[0].messages
-        .map(warning => warning.ruleId),
+      reports[0].messages.map((warning) => warning.ruleId)
     )
     console.info(" ✔︎")
-  }
-  catch (error) {
+  } catch (error) {
     console.error(error)
   }
 }
