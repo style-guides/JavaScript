@@ -82,12 +82,15 @@ In order to set it up, fist install ESLint and the module:
 npm install --save-dev eslint eslint-config-javascript
 ```
 
-Next add following entry to your package file:
+Next add a `eslint.config.js` file to your root directory
+with the following content:
 
-```json
-"eslintConfig": {
-  "extends": "eslint-config-javascript"
-}
+```js
+import eslintConfJs from "eslint-config-javascript"
+
+export default [
+  ...eslintConfJs,
+]
 ```
 
 This will load the configuration of this styleguide.
@@ -95,7 +98,7 @@ Finally add a `lint` script to the package scripts:
 
 ```json
 "scripts": {
-  "lint": "eslint --max-warnings=0 --ignore-path=.gitignore .",
+  "lint": "eslint --max-warnings=0 --ignore-pattern=.gitignore .",
   …
 }
 ```
